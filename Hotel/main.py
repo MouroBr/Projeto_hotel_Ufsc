@@ -3,15 +3,24 @@ from Hotel.hotel import Hotel
 
 def main():
     hotel = Hotel()
-    hospedagem = hotel.criar_hospedagem("Bruno", "123456", "Casal")
-    hospedagem.consumir_item("coca-cola")
-    hospedagem.consumir_item("biscoito")
-    hotel.finalizar_hospedagem("123456")
-    hospedagem = hotel.criar_hospedagem("Bruno", "123456", "Solteiro")
-    hospedagem.consumir_item("coca-cola")
-    hospedagem.consumir_item("biscoito")
-    hospedagem.consumir_item("snack")
-    hotel.finalizar_hospedagem("123456")
+
+    nome = input("Digite o nome do hóspede: ")
+    cpf = input("Digite o CPF do hóspede: ")
+    tipo_quarto = input("Digite o tipo de quarto (Casal/Solteiro): ")
+
+    hospedagem = hotel.criar_hospedagem(nome, cpf, tipo_quarto)
+
+    item = input("Digite o nome do item a ser consumido: ")
+    hospedagem.consumir_item(item)
+
+    opcao = input("Deseja consumir mais itens? (S/N): ")
+    while opcao.upper() == "S":
+        item = input("Digite o nome do item a ser consumido: ")
+        hospedagem.consumir_item(item)
+        opcao = input("Deseja consumir mais itens? (S/N): ")
+
+    cpf_hospede = input("Digite o CPF do hóspede para finalizar a hospedagem: ")
+    hotel.finalizar_hospedagem(cpf_hospede)
 
 
 if __name__ == '__main__':
