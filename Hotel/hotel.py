@@ -54,7 +54,7 @@ class Hotel:
 
         hospede = self.buscar_hospede(nome_hospede, cpf_hospede)
 
-        qtde_dias = 2
+        qtde_dias = 0
         hospedagem = Hospedagem(quarto, hospede, qtde_dias)
         self.hospedagens.append(hospedagem)
         return hospedagem

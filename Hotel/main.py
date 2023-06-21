@@ -4,11 +4,12 @@ from Hotel.hotel import Hotel
 def main():
     hotel = Hotel()
 
+    tipo_quarto = input("Digite o tipo de quarto (Casal/Solteiro): ")
     nome = input("Digite o nome do hóspede: ")
     cpf = input("Digite o CPF do hóspede: ")
-    tipo_quarto = input("Digite o tipo de quarto (Casal/Solteiro): ")
+    qtde_dias = int(input("Digite a quantidade de dias da hospedagem: "))
 
-    hospedagem = hotel.criar_hospedagem(nome, cpf, tipo_quarto)
+    hospedagem = hotel.criar_hospedagem(nome, cpf, tipo_quarto, qtde_dias)
 
     item = input("Digite o nome do item a ser consumido: ")
     hospedagem.consumir_item(item)
