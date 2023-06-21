@@ -1,4 +1,4 @@
-from Quarto.item_quarto import Item_Quarto
+from Hotel.Quarto.item_quarto import Item_Quarto
 
 
 class Quarto:
